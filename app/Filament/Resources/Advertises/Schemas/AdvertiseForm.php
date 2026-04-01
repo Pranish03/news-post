@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Advertises\Schemas;
 
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
@@ -14,8 +15,6 @@ class AdvertiseForm
         return $schema
             ->components([
                 Section::make('Advertisement Information')->schema([
-                    TextInput::make('banner')
-                        ->required(),
                     TextInput::make('company_name')
                         ->required(),
                     TextInput::make('redirect_link')
@@ -23,6 +22,9 @@ class AdvertiseForm
                     TextInput::make('contact')
                         ->default(null),
                     DatePicker::make('expire_date')
+                        ->required(),
+                    FileUpload::make('banner')
+                        ->image()
                         ->required(),
                 ])->columnSpanFull()->columns(2)
             ]);
