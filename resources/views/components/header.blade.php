@@ -10,7 +10,7 @@
 
     <nav class="flex items-center justify-center gap-10 text-lg font-medium">
         @foreach ($categories as $category)
-            <a href="">{{ $category->name }}</a>
+            <a href="{{ route('category', $category->slug) }}">{{ $category->name }}</a>
         @endforeach
     </nav>
 </header>

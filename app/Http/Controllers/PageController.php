@@ -22,4 +22,12 @@ class PageController extends Controller
 
         return view('index', compact('articles', 'advertises'));
     }
+
+    public function category($slug)
+    {
+        $category = Category::where('slug', $slug)->first();
+        $advertises = Advertise::where('expire_date', '>=', today())->get();
+
+        return view('category', compact('category', 'advertises'));
+    }
 }
