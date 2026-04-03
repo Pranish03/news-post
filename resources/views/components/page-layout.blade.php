@@ -8,6 +8,8 @@
     <title>Document</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <link rel="stylesheet" href="https://unpkg.com/lucide-static@latest/font/lucide.css" />
 </head>
 
 <body class="font-serif">

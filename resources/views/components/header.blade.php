@@ -1,7 +1,9 @@
 <header class="border-b border-black max-w-300 mx-auto pb-3 mb-12">
-    <a href="/">
-        <h1 class="text-5xl text-center mt-6 mb-1 font-semibold">The News Post</h1>
-    </a>
+    <h1 class="text-5xl text-center mt-6 mb-1 font-semibold">
+        <a href="/">
+            The News Post
+        </a>
+    </h1>
     <p class="text-center mb-8 font-medium text-lg">
         {{ now()->format('l, M d, Y') }}
     </p>
