@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Category;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 
 class PageController extends Controller
@@ -16,6 +16,7 @@ class PageController extends Controller
     }
     public function index()
     {
-        return view('index');
+        $latest_articles = Article::latest()->take(5)->get();
+        return view('index', compact('latest_articles'));
     }
 }

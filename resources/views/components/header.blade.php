@@ -1,4 +1,4 @@
-<header class="border-b border-black max-w-300 mx-auto pb-3">
+<header class="border-b border-black max-w-300 mx-auto pb-3 mb-12">
     <a href="/">
         <h1 class="text-5xl text-center mt-6 mb-1 font-semibold">The News Post</h1>
     </a>
