@@ -1,6 +1,6 @@
 <x-page-layout>
     <section class="grid grid-cols-3 gap-8 mb-12">
-        <a href="" class="col-span-2">
+        <a href="{{ route('article', $articles[0]->slug) }}" class="col-span-2">
             <h1 class="text-3xl leading-tight font-semibold line-clamp-2 mb-2">{{ $articles[0]->title }}</h1>
             <p class="text-lg mb-4">{{ $articles[0]->created_at->diffForHumans() }}</p>
             <img class="w-full mb-4" src="{{ asset(Storage::url($articles[0]->image)) }}"
@@ -12,7 +12,7 @@
             <h3 class="mb-4 text-2xl font-semibold">Latest News</h3>
 
             @foreach ($articles->slice(1)->take(4) as $article)
-                <a href="" class="flex gap-4">
+                <a href="{{ route('article', $article->slug) }}" class="flex gap-4">
                     <img class="h-30" src="{{ asset(Storage::url($article->image)) }}"
                         alt="{{ $article->title }} Image">
                     <div>
@@ -30,7 +30,7 @@
     <section class="grid grid-cols-3 gap-8">
         <div class="col-span-2 space-y-8">
             @foreach ($articles->slice(5) as $article)
-                <a href="" class="flex gap-4">
+                <a href="{{ route('article', $article->slug) }}" class="flex gap-4">
                     <div>
                         <h2 class="text-2xl leading-tight font-semibold line-clamp-2 mb-2">
                             {{ $article->title }}

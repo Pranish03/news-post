@@ -30,4 +30,12 @@ class PageController extends Controller
 
         return view('category', compact('category', 'advertises'));
     }
+
+    public function article($slug)
+    {
+        $article = Article::where('slug', $slug)->first();
+        $articles = Article::where('status', true)->whereNot('slug', $slug)->latest()->take(6)->get();
+
+        return view('article', compact('article', 'articles'));
+    }
 }

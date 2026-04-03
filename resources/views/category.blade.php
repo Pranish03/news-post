@@ -2,7 +2,7 @@
     <section class="grid grid-cols-3 gap-8">
         <div class="col-span-2 space-y-8">
             @foreach ($category->articles as $article)
-                <a href="" class="flex gap-4">
+                <a href="{{ route('article', $article->slug) }}" class="flex gap-4">
                     <div>
                         <h2 class="text-2xl leading-tight font-semibold line-clamp-2 mb-2">
                             {{ $article->title }}
